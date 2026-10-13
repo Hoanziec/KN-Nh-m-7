@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Alert - Cảnh báo môi trường</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="#home"><span>🌱</span> Green Alert</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+    <nav id="navMenu">
+      <a href="#home">Trang chủ</a>
+      <a href="#alerts">Cảnh báo</a>
+      <a href="#map">Bản đồ</a>
+      <a href="#report">Gửi báo cáo</a>
+      <a href="#knowledge">Kiến thức</a>
+      <a href="#admin">Quản trị</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">🌍 Cùng nhau sống xanh</span>
+      <h1>Phát hiện nhanh.<br><span>Cảnh báo kịp thời.</span></h1>
+      <p>Green Alert là website hỗ trợ cộng đồng theo dõi, báo cáo và chia sẻ các vấn đề môi trường như rác thải, ô nhiễm không khí và nguồn nước.</p>
+      <div class="actions">
+    <a class="btn primary" href="#alerts">Xem cảnh báo</a>
+    <a class="btn secondary" href="#report">+ Gửi báo cáo</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="earth">🌎</div>
+      <h3>Môi trường quanh bạn hôm nay?</h3>
+      <p>Hãy cùng phát hiện và báo cáo những vấn đề cần được xử lý.</p>
+      <div class="mini-stats"><span><b>125</b><small>Cảnh báo</small></span><span><b>87</b><small>Đã xử lý</small></span><span><b>320</b><small>Người tham gia</small></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats container">
+  <div><strong>125</strong><span>Cảnh báo</span></div>
+  <div><strong>87</strong><span>Báo cáo đã xử lý</span></div>
+  <div><strong>42</strong><span>Điểm môi trường</span></div>
+  <div><strong>320</strong><span>Người tham gia</span></div>
+</section>
+
+<section id="alerts" class="section">
+<div class="container">
+  <div class="section-title"><div><span class="eyebrow">CẬP NHẬT MỚI</span><h2>Cảnh báo môi trường</h2></div>
+  <select id="filter"><option value="all">Tất cả</option><option value="air">Không khí</option><option value="trash">Rác thải</option><option value="water">Nguồn nước</option><option value="noise">Tiếng ồn</option></select></div>
+  <div class="cards" id="alertList"></div>
+</div>
+</section>
+
+<section id="map" class="section soft">
+<div class="container">
+  <div class="section-title"><div><span class="eyebrow">KHU VỰC</span><h2>Bản đồ cảnh báo</h2></div><span class="legend"><i class="red"></i> Cao &nbsp; <i class="orange"></i> Trung bình &nbsp; <i class="green"></i> Đã xử lý</span></div>
+  <div class="fake-map" id="fakeMap">
+    <div class="road r1"></div><div class="road r2"></div><div class="road r3"></div>
+    <button class="pin high p1" data-info="Điểm #001 • Rác thải • Quận 12">●</button>
+    <button class="pin medium p2" data-info="Điểm #002 • Không khí • Gò Vấp">●</button>
+    <button class="pin done p3" data-info="Điểm #003 • Nguồn nước • Bình Thạnh">●</button>
+    <button class="pin high p4" data-info="Điểm #004 • Rác thải • Thủ Đức">●</button>
+    <div class="map-label">BẢN ĐỒ MÔ PHỎNG<br><small>Bấm vào điểm để xem thông tin</small></div>
+  </div>
+</div>
+</section>
+
+<section id="report" class="section">
+<div class="container report-grid">
+  <div>
+    <span class="eyebrow">THAM GIA CỘNG ĐỒNG</span><h2>Gửi báo cáo môi trường</h2>
+    <p>Nếu bạn phát hiện một vấn đề môi trường, hãy gửi thông tin để cộng đồng và đơn vị phụ trách có thể tiếp nhận.</p>
+    <div class="tip">💡 <b>Mẹo:</b> Mô tả địa điểm càng rõ, báo cáo càng dễ được xác minh.</div>
+  </div>
+  <form id="reportForm" class="form-card">
+    <label>Loại vấn đề<select id="type" required><option value="">-- Chọn loại --</option><option>Rác thải</option><option>Ô nhiễm không khí</option><option>Ô nhiễm nước</option><option>Tiếng ồn</option><option>Khác</option></select></label>
+    <label>Địa điểm<input id="location" required placeholder="Ví dụ: Đường Nguyễn Văn A, Quận 12"></label>
+    <label>Mức độ<select required><option>Thấp</option><option>Trung bình</option><option>Cao</option></select></label>
+    <label>Mô tả<textarea id="description" required placeholder="Mô tả vấn đề bạn phát hiện..."></textarea></label>
+    <label>Hình ảnh<input type="file" accept="image/*"></label>
+    <button class="btn primary full" type="submit">GỬI BÁO CÁO</button>
+  </form>
+</div>
+</section>
+
+<section id="knowledge" class="section soft">
+<div class="container">
+  <span class="eyebrow">SỐNG XANH MỖI NGÀY</span><h2>Kiến thức môi trường</h2>
+  <div class="knowledge">
+    <article><div class="icon">♻️</div><h3>Phân loại rác tại nguồn</h3><p>Phân loại đúng giúp giảm lượng rác phải xử lý và tăng khả năng tái chế.</p><button onclick="showToast('Đã mở bài viết: Phân loại rác tại nguồn')">Đọc thêm →</button></article>
+    <article><div class="icon">🌳</div><h3>Bảo vệ cây xanh</h3><p>Cây xanh góp phần cải thiện không khí và tạo không gian sống trong lành.</p><button onclick="showToast('Đã mở bài viết: Bảo vệ cây xanh')">Đọc thêm →</button></article>
+    <article><div class="icon">💧</div><h3>Bảo vệ nguồn nước</h3><p>Không xả rác và hóa chất xuống cống, sông, hồ là hành động thiết thực.</p><button onclick="showToast('Đã mở bài viết: Bảo vệ nguồn nước')">Đọc thêm →</button></article>
+  </div>
+</div>
+</section>
+
+<section id="admin" class="section">
+<div class="container">
+  <div class="section-title"><div><span class="eyebrow">DEMO QUẢN TRỊ</span><h2>Quản lý báo cáo</h2></div><button class="btn secondary" onclick="showToast('Chức năng đăng nhập quản trị là bản demo')">Đăng nhập</button></div>
+  <div class="admin-grid">
+    <div class="admin-stat"><span>Tổng báo cáo</span><b id="totalReports">125</b></div>
+    <div class="admin-stat"><span>Chưa xử lý</span><b>18</b></div>
+    <div class="admin-stat"><span>Đang xử lý</span><b>25</b></div>
+    <div class="admin-stat"><span>Đã xử lý</span><b>82</b></div>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Mã</th><th>Loại</th><th>Khu vực</th><th>Mức độ</th><th>Trạng thái</th></tr></thead>
+  <tbody id="reportTable"><tr><td>#001</td><td>Rác thải</td><td>Quận 12</td><td><span class="tag danger">Cao</span></td><td>Chưa xử lý</td></tr><tr><td>#002</td><td>Không khí</td><td>Gò Vấp</td><td><span class="tag warn">Trung bình</span></td><td>Đang xử lý</td></tr><tr><td>#003</td><td>Nguồn nước</td><td>Bình Thạnh</td><td><span class="tag danger">Cao</span></td><td><span class="tag ok">Đã xử lý</span></td></tr></tbody></table></div>
+</div>
+</section>
+</main>
+
+<footer><div class="container footer"><div><b>🌱 Green Alert</b><p>Công nghệ số vì môi trường xanh.</p></div><div><b>Nhóm 7</b><p>Dự án học tập – demo website</p></div></div></footer>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
